@@ -1,0 +1,267 @@
+:root {
+    --main-back: #ffffff;
+    --main-text: #534582;
+    --nav-back: #221C35;
+    --nav-text: #57AB89;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--main-back);
+}
+
+.main-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--nav-back);
+    color: var(--nav-text);
+}
+
+.main-header h1 {
+    font-size: 48px;
+    background-color: var(--nav-text);
+    color: var(--nav-back);
+    margin-left: -20px;
+    padding: 10px 20px 10px 80px;
+}
+
+.main-header nav {
+    padding-top: 30px;
+    margin-right: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+.main-header nav ul {
+    list-style-type: none;
+}
+
+.main-header nav ul li {
+    display: inline-block;
+    margin: 0px 5px;
+    padding: 0px 5px;
+    border-bottom: solid;
+    border-color: var(--nav-text);
+}
+
+.main-header nav ul li a {
+    color: var(--nav-text);
+    text-decoration: none;
+}
+
+.my-picture {
+    position: relative;
+    background-color: #547980;
+}
+
+.my-picture img {
+    height: 400px;
+    width: 400px;
+    position: relative;
+    left: 10%;
+}
+
+.my-picture p {
+    background-color: var(--nav-text);
+    color: var(--nav-back);
+    position: absolute;
+    bottom: 80px;
+    right: 10%;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 5px;
+    text-align: left;
+}
+
+.my-picture .pic-cap { 
+    font-size: 32px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    padding: 0px 20px;
+}
+
+.info .sec-header {
+    color: var(--main-text);
+    width: 30%;
+    border-right: solid;
+    text-align: right;
+    font-size: 40px;
+    padding-right: 20px;
+    padding-left: 40px;
+}
+
+.info .content {
+    width: 70%;
+    padding: 10px 20px 10px 20px;
+}
+
+.info p {
+    color: var(--main-text);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.card {
+    position: relative;
+    margin: 1%;
+    padding: 0px;
+    border: 5px;
+    border-style: solid;
+    border-color: var(--nav-text);
+}
+
+.card img{
+    transition: all 0.5s;
+    opacity: 0.5;
+}
+
+.card:hover img{
+    transition: all 0.50s ease-in-out;
+    opacity: 1.0;
+}
+
+.big-card{
+    height: 400px;
+    width: 100%;
+}
+
+.small-card{
+    height: 150px;
+    width: 48%;
+}
+
+.info .subtitle {
+    background-color: var(--nav-text);
+    color: var(--nav-back);
+    position: absolute;
+    bottom: 20px;
+    left: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.info .subtitle .caption {
+    font-size: 12px;
+}
+
+#contact-me {
+    align-items: center;
+}
+#contact-me ul {
+    list-style-type: none;
+    padding-top: 10px;
+}
+
+#contact-me ul li {
+    display: inline-block;
+    padding: 0px 10px;
+    border-bottom: solid;
+    border-color: var(--main-text);
+}
+
+#contact-me ul li a, 
+#contact-me ul li p {
+    color: var(--main-text);
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/*
+    Media screens between 992px and 768px are optimized for Tablet devices, 
+    the titled images under the "Work" section will be displayed in 
+    one column. The width of the small cards (.small-card) will span 
+    its whole container, and their heights increased to 150px. 
+    Since these devices are touchscreens, the image opacities will be 
+    set to 1.0 (no mouseover hover highlight effect).
+*/
+@media screen and (max-width: 992px) {
+    .small-card {
+        width: 100%;
+        height: 150px;
+    }
+
+    .card img {
+        opacity: 1.0;
+    }
+}
+
+/*
+    Media screens below 768px are for Smartphone devices, content in 
+    main will be displayed in one column, including the section headings.
+*/
+@media screen and (max-width: 768px) {
+    .info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info .sec-header {
+        border-right: none;
+        border-bottom: solid;
+        padding: 0px;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .info .content {
+        width: 90%;
+    }
+
+    .info .subtitle {
+        font-size: 16px;
+    }
+
+    .links {
+        justify-content: space-between;
+    }
+
+    #contact-me ul li {
+        border-bottom-width: 2px;
+    }
+
+    #contact-me ul li a,
+    #contact-me ul li p {
+        color: var(--main-text);
+        font-size: 14px;
+    }
+
+    .my-picture p {
+        font-size: 16px;
+        opacity: 0.8;
+    }
+
+    .my-picture .pic-cap {
+        font-size: 24px;
+    }
+}
